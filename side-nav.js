@@ -1,15 +1,4 @@
-/**
- * The template that is used for the shadow root for every copy of your element,
- * which houses the styles and layout for the element.
- */
-const template = document.createElement("template");
-template.innerHTML = `
-    <style>
-        :host {
-            display: block;
-        }
-    </style>
-`;
+
 
 /**
  * This is the class that controls each instance of your custom element.
@@ -28,12 +17,19 @@ class SideNav extends HTMLElement {
 
     constructor() {
         super();
+        this.style.display = "block";
+        this.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)";
+        this.style.position = "absolute";
+        this.style.top = "0px";
+        this.style.left = "0px";
+        this.style.height = "100%";
+        this.style.padding = " 20px";
+        this.style.width = "200px";
+        this.close();
+    }
 
-        // create shadow root for any children context
-        this.attachShadow({mode: "open"});
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
-
-        // add any initial variables here
+    close() {
+        this.style.left =  `${this.width}px`;
     }
 
     /**
