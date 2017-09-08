@@ -1,0 +1,30 @@
+{
+  "name": "side-nav",
+  "version": "1.0.0",
+  "description": "A HTML custom element implementing the `<side-nav>` tag.",
+  "main": "side-nav.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kiricon/side-nav.git"
+  },
+  "keywords": [
+    "custom",
+    "element",
+    "side",
+    "nav",
+    "side-nav",
+    "html",
+    "hamburger",
+    "menu",
+    "mobile"
+  ],
+  "author": "Dominic Valenciana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kiricon/side-nav/issues"
+  },
+  "homepage": "https://github.com/Kiricon/side-nav#readme"
+}
