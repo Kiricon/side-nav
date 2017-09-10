@@ -1,7 +1,7 @@
 # side-nav
 A HTML custom element implementing the `<side-nav>` tag.
 
-[ Add a nice image here ]
+![side-nav in action](https://github.com/Kiricon/side-nav/raw/master/screencapture.gif)
 
 ## Setup
 
@@ -34,5 +34,5 @@ To have the `side-nav` open by default you can add the `open` property, other wi
 
 You can also toggle the state of the `side-nav` by adding or remove the `open` property. 
 
-To programatically open or close the side nav you need only call the `open()` or `close()` method. 
+To programatically open or close the side nav you need only call the `open()`, `close()` or `toggle()` method. 
 

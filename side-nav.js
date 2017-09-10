@@ -52,6 +52,14 @@ class SideNav extends HTMLElement {
         this.setAttribute('open', '');
     }
 
+    toggle() {
+        if(this.hasAttribute('open')) {
+            this.close();
+        }else {
+            this.open();
+        }
+    }
+
     _close() {
         this.style.transform =  "translateX(-100%)";
     }
