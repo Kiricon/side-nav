@@ -18,19 +18,29 @@ class SideNav extends HTMLElement {
     constructor() {
         super();
         const openCloseStyle = this.hasAttribute("open") ? "0" : "100";
-        this.style.cssText = `
-            display: block;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            height: 100%;
-            padding: 20px;
-            width: 200px;
-            transition: transform 0.3s ease;
-            will-change: transform;
-            transform: translateX(-${openCloseStyle}%);
+        const css = `
+            side-nav {
+                display: block;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 100%;
+                padding: 20px;
+                width: 200px;
+                transition: transform 0.3s ease;
+                will-change: transform;
+                transform: translateX(-${openCloseStyle}%);
+            }
         `;
+        const style=document.createElement('style');
+        style.type='text/css';
+        if(style.styleSheet){
+            style.styleSheet.cssText= css;
+        }else{
+            style.appendChild(document.createTextNode(css));
+        }
+        document.getElementsByTagName('head')[0].appendChild(style);
         
     }
 
@@ -48,22 +58,6 @@ class SideNav extends HTMLElement {
 
     _open() {
         this.style.transform = "translateX(0%)";
-    }
-
-    /**
-     * Part of the custom element spec. Called after your element is attached to
-     * the DOM. Do anything related to the element or its children here in most
-     * cases.
-     */
-    connectedCallback() {
-        
-    }
-    /**
-     * Part of the custom element spec. Called after your element is remove from
-     * the DOM. Disconnect any listeners or anything else here.
-     */
-    disconnectedCallback() {
-
     }
 
     /**
