@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/Kiricon/side-nav/issues"
   },
-  "homepage": "https://github.com/Kiricon/side-nav#readme"
+  "homepage": "https://github.com/Kiricon/side-nav#readme",
+  "devDependencies": {
+    "top-nav": "^1.0.2"
+  }
 }
