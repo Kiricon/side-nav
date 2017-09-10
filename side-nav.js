@@ -12,11 +12,12 @@ class SideNav extends HTMLElement {
      *  attribute.
      */
     static get observedAttributes() {
-        return [];
+        return ["open"];
     };
 
     constructor() {
         super();
+        const openCloseStyle = this.hasAttribute("open") ? "0" : "100";
         this.style.cssText = `
             display: block;
             box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -28,15 +29,24 @@ class SideNav extends HTMLElement {
             width: 200px;
             transition: transform 0.3s ease;
             will-change: transform;
+            transform: translateX(-${openCloseStyle}%);
         `;
-        this.close();
+        
     }
 
     close() {
-        this.style.transform =  "translateX(-100%)";
+        this.removeAttribute('open');
     }
 
     open() {
+        this.setAttribute('open', '');
+    }
+
+    _close() {
+        this.style.transform =  "translateX(-100%)";
+    }
+
+    _open() {
         this.style.transform = "translateX(0%)";
     }
 
@@ -67,6 +77,11 @@ class SideNav extends HTMLElement {
      */
     attributeChangedCallback(name, oldValue, newValue) {
         // respond to a changed attribute here
+        if(this.hasAttribute("open")) {
+            this._open();
+        }else {
+            this._close();
+        }
     }
 }
 
