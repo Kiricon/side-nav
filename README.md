@@ -25,5 +25,14 @@ require("side-nav");
 
 ## Usage
 ```HTML
-    <side-nav></side-nav>
+    <side-nav open>
+        // Your content here ...
+    </side-nav>
 ```
+
+To have the `side-nav` open by default you can add the `open` property, other wise it will be closed. 
+
+You can also toggle the state of the `side-nav` by adding or remove the `open` property. 
+
+To programatically open or close the side nav you need only call the `open()` or `close()` method. 
+
