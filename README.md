@@ -1,7 +1,7 @@
 # side-nav
 A HTML custom element implementing the `<side-nav>` tag.
 
-![side-nav in action](https://github.com/Kiricon/side-nav/raw/master/screencapture.gif)
+![side-nav in action](https://github.com/Kiricon/side-nav/raw/master/screencatpure.gif)
 
 ## Setup
 
