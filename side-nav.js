@@ -17,19 +17,27 @@ class SideNav extends HTMLElement {
 
     constructor() {
         super();
-        this.style.display = "block";
-        this.style.boxShadow = "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)";
-        this.style.position = "absolute";
-        this.style.top = "0px";
-        this.style.left = "0px";
-        this.style.height = "100%";
-        this.style.padding = " 20px";
-        this.style.width = "200px";
+        this.style.cssText = `
+            display: block;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            padding: 20px;
+            width: 200px;
+            transition: transform 0.3s ease;
+            will-change: transform;
+        `;
         this.close();
     }
 
     close() {
-        this.style.left =  `${this.width}px`;
+        this.style.transform =  "translateX(-100%)";
+    }
+
+    open() {
+        this.style.transform = "translateX(0%)";
     }
 
     /**
@@ -40,7 +48,6 @@ class SideNav extends HTMLElement {
     connectedCallback() {
         
     }
-
     /**
      * Part of the custom element spec. Called after your element is remove from
      * the DOM. Disconnect any listeners or anything else here.
